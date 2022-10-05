@@ -1,0 +1,19 @@
+
+  <img
+    style="width: 200px; height: 200px"
+    class="img-container"
+    src="https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/06/3e5a7-logo-de-batman-png-free.png?resize=700%2C700&ssl=1"
+    alt="Photo of a Shiba Inu"
+  />
+
+  <mat-nav-list>
+    <ng-container *ngFor="let genre of genres">
+        <mat-list-item 
+        routerLink="/genre/{{genre.name}}"
+        routerLinkActive="active-link"
+        style="color: white"
+        >{{genre.name}}
+        </mat-list-item>
+    </ng-container>
+  </mat-nav-list>
+  

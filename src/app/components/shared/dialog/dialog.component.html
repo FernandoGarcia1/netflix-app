@@ -1,0 +1,29 @@
+<div class="container-dialog mat-dialog-container">  
+  <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}" alt="" class="img-banner" />
+  <mat-icon class="center-play">play_circle_outline</mat-icon>
+  <h2 *ngIf="movie['title'] !== undefined"> {{movie.title}}</h2>  
+  <h2 *ngIf="movie['name'] !== undefined">{{movie.name}}</h2>
+  
+  <h3>Calificacion:{{movie.vote_average}}</h3>
+  <h3>Estreno:</h3>
+  <h3 *ngIf="movie['release_date'] !== undefined">{{movie.release_date}}</h3>
+  <h3 *ngIf="movie['first_air_date'] !== undefined">{{movie.first_air_date}}</h3>
+  <p>{{movie.overview}}</p>  
+    <mat-icon class="example-icon" style="margin-left: 17px;">cast</mat-icon>  
+    <small class="small-text">Transmitir</small>
+    <mat-icon class="example-icon" 
+    [ngClass]="{
+      'small-color-inactive' : !isSelected(),
+      'small-color-active' : isSelected()
+    }"
+    (click) = "favoriteClick()">check</mat-icon>  
+    <small class="small-text">Favoritos</small>
+</div>
+
+<!--[ngClass]="{
+      'small-color-inactive' : selectMovie === false,
+      'small-color-active' : selectMovie === true
+    }
+    
+    
+    [ngClass] = "(isSelected()) ? 'small-color-active' : 'small-color-inactive'""-->

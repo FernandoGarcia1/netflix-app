@@ -1,0 +1,20 @@
+<!--
+<mat-card class="docs-guide-list">
+    <img src="https://img.ecartelera.com/noticias/fotos/70100/70190/1.jpg" alt="" srcset="" style="width: 15%; height: 30%; margin-right: 5px; margin-left: 5px">
+    <img src="https://img.ecartelera.com/noticias/fotos/70100/70190/1.jpg" alt="" srcset="" style="width: 15%; height: 30%; margin-right: 5px; margin-left: 5px">
+    <img src="https://img.ecartelera.com/noticias/fotos/70100/70190/1.jpg" alt="" srcset="" style="width: 15%; height: 30%; margin-right: 5px; margin-left: 5px">
+    <img src="https://img.ecartelera.com/noticias/fotos/70100/70190/1.jpg" alt="" srcset="" style="width: 15%; height: 30%; margin-right: 5px; margin-left: 5px">
+    <img src="https://img.ecartelera.com/noticias/fotos/70100/70190/1.jpg" alt="" srcset="" style="width: 15%; height: 30%; margin-right: 5px; margin-left: 5px">
+    <img src="https://img.ecartelera.com/noticias/fotos/70100/70190/1.jpg" alt="" srcset="" style="width: 15%; height: 30%; margin-right: 5px; margin-left: 5px">        
+</mat-card>
+-->
+<mat-grid-list cols="5" rowHeight="300" style="margin-right: 7px; margin-left: 15px;">
+
+    <ng-container *ngFor="let movie of movies; let i = index">
+        <mat-grid-tile>
+            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" style="width: 80%; height:250px" (click)="openDialog(i)">
+        </mat-grid-tile>
+    </ng-container>
+    
+    
+

@@ -1,0 +1,40 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .sidevar-color{
+    height: 100vh;
+    width: 230px;
+    background-color: #131314;
+    float: right;
+  }
+
+  
+  div{height: 100vh;}
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .img-container{
+    border-radius: 50%;
+    height:70pt;
+    width:70pt;
+    
+    overflow:hidden;
+    margin:5px;
+  }
+  img{
+    display: block;
+    margin: 0px auto;
+   }
+
+.active-link{
+    background-color: rgb(173, 165, 217) !important;
+    
+}
+ 
+h2{
+    margin-bottom: 0px !important;
+}
+
+

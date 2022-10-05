@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MoviesRequestService } from './service/movies-request.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'netflix';
+  opened = false;
+  
 }
+
