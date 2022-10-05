@@ -21,5 +21,8 @@ export class SidenavComponent implements OnInit {
       }
     )
   }
+  toLowerCase(genre: string) {
+    return this.genres.toLowerCase
+  }
 
 }

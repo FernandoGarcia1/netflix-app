@@ -50,4 +50,14 @@ export class MoviesRequestService {
       })  
     )
   }
+
+  getMoviesByGenre(id: string){    
+    return this.http.get(
+      `${this._urlBase}discover/movie?language=es-MX&with_genres=${id}&api_key=${this._apiKey}`
+    ).pipe(
+      map((movies : any) => {        
+        return movies
+      })  
+    )
+  }
 }

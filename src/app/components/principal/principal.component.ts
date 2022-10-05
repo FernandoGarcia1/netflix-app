@@ -13,12 +13,12 @@ export class PrincipalComponent implements OnInit {
   public popularMovies:any;
 
   constructor(private moviesRequest : MoviesRequestService){
+    
+  }
+  ngOnInit(): void {
     this.getNewMovies();
     this.getPopularSeries();
     this.getPopularMovies();
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   getNewMovies(){

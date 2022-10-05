@@ -14,3 +14,12 @@
   .example-card {
     max-width: 400px;
   }
+  .active-link{
+    background-color: rgb(239, 0, 0) !important;
+    
+}
+ 
+
+.active-link::hover{
+    background-color: rgb(255, 0, 0);
+}
