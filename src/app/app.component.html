@@ -14,10 +14,9 @@
 </mat-toolbar>
 
 <mat-drawer-container class="example-container ">
-  <mat-drawer-content style="height: 100%; background-color: black;">
-    <router-outlet></router-outlet>
-    <br>
-    <br>
+  <!--<mat-drawer-content style=" background-color: black; height: 94vh;" (scroll)="onScroll($event)"></mat-drawer-content>-->
+  <mat-drawer-content style=" background-color: black; height: 94vh;">
+    <router-outlet></router-outlet>     
   </mat-drawer-content>
 
   <mat-drawer mode="side" [(opened)]="opened" class="sidevar-color">
@@ -25,4 +24,5 @@
   </mat-drawer>
 
   
+
 

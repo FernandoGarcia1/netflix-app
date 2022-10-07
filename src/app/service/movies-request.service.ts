@@ -9,7 +9,6 @@ import { ApiEndpoints } from '../components/utils/api.endpoints.class';
   providedIn: 'root'
 })
 export class MoviesRequestService {
-
   
   constructor(public http: HttpClient) { }
 
@@ -46,8 +45,8 @@ export class MoviesRequestService {
     )
   }
 
-  getMoviesByGenre(id: string){    
-    return this.http.get(environment.URL_BASE+ApiEndpoints.getMoviesByGenre(id))
+  getMoviesByGenre(id: string, page: number){    
+    return this.http.get(environment.URL_BASE+ApiEndpoints.getMoviesByGenre(id, page))
     .pipe(
       map((movies : any) => {        
         return movies

@@ -1,3 +1,7 @@
 
 
-<app-list-movies [movies]="movies"></app-list-movies>   
+<div style="overflow: scroll;  height: 94vh; overflow-x: hidden;" (scroll)="onScroll($event)">
+    <app-list-movies [movies]="movies" ></app-list-movies>   -
+</div>
+
+<br>

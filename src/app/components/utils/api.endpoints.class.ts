@@ -3,7 +3,7 @@ export class ApiEndpoints{
     static POPULAR_MOVIES = 'movie/top_rated';
     static POPULAR_SERIES = 'tv/popular';
     static GET_GENRES = 'genre/movie/list';    
-    static getMoviesByGenre(id: string){
-        return 'discover/movie?language=es-MX&with_genres='+id;
+    static getMoviesByGenre(id: string, page:number){
+        return 'discover/movie?language=es-MX&with_genres='+id+'&page='+page;
     } 
 }

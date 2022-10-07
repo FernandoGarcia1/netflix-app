@@ -9,7 +9,6 @@ import { MoviesRequestService } from './service/movies-request.service';
 })
 export class AppComponent {
   title = 'netflix';
-  opened = false;
-  
+  opened = false;  
 }
 
