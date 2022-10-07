@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { ApiEndpoints } from '../components/utils/api.endpoints.class';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesRequestService {
 
-  private _urlBase = 'https://api.themoviedb.org/3/';
-  private _apiKey = 'e6b68961d381f9cdef9cf9e39d0fc3ad'
+  
   constructor(public http: HttpClient) { }
 
   getNewMovies(){
-    return this.http.get(
-      `${this._urlBase}movie/popular?api_key=${this._apiKey}&language=es&page=1`
-    ).pipe(
+    return this.http.get(environment.URL_BASE+ApiEndpoints.NEW_MOVIES)
+    .pipe(
       map((movies : any) => {        
         return movies
       })
@@ -22,9 +22,7 @@ export class MoviesRequestService {
   }
 
   getPopularSeries(){
-    return this.http.get(
-      `${this._urlBase}tv/popular?api_key=${this._apiKey}&language=es&page=1`
-    ).pipe(
+    return this.http.get(environment.URL_BASE+ApiEndpoints.POPULAR_SERIES).pipe(
       map((movies : any) => {        
         return movies
       })  
@@ -32,9 +30,7 @@ export class MoviesRequestService {
   }
 
   getPopularMovies(){
-    return this.http.get(
-      `${this._urlBase}movie/top_rated?api_key=${this._apiKey}&language=es&page=1`
-    ).pipe(
+    return this.http.get(environment.URL_BASE+ApiEndpoints.POPULAR_MOVIES).pipe(
       map((movies : any) => {        
         return movies
       })  
@@ -42,9 +38,7 @@ export class MoviesRequestService {
   }
 
   getGeneres(){    
-    return this.http.get(
-      `${this._urlBase}genre/movie/list?api_key=${this._apiKey}`
-    ).pipe(
+    return this.http.get(environment.URL_BASE+ApiEndpoints.GET_GENRES).pipe(
       map((movies : any) => {        
         return movies
       })  
@@ -52,9 +46,8 @@ export class MoviesRequestService {
   }
 
   getMoviesByGenre(id: string){    
-    return this.http.get(
-      `${this._urlBase}discover/movie?language=es-MX&with_genres=${id}&api_key=${this._apiKey}`
-    ).pipe(
+    return this.http.get(environment.URL_BASE+ApiEndpoints.getMoviesByGenre(id))
+    .pipe(
       map((movies : any) => {        
         return movies
       })  

@@ -27,7 +27,7 @@ $my-theme: mat.define-light-theme((
 html, body { height: 100%; 
     background-color: black;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow: hidden; }
 .mat-dialog-container{
   background-color: black;
   padding: 0 !important;
@@ -38,3 +38,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   overflow: hidden;
 }
 
+img:hover{
+  cursor: pointer;
+}

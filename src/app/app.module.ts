@@ -6,17 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './components/shared/material.module';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { ListMoviesComponent } from './components/shared/list-movies/list-movies.component';
-import { PrincipalComponent } from './components/principal/principal.component';
-import { GenresComponent } from './components/genres/genres.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SharedModule } from './components/shared/shared.module';
+import { MoviesModule } from './components/movies/movies.module';
+import { ApiKeyInterceptor } from './service/interceptors/api-key.interceptor';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PrincipalComponent,
-    GenresComponent,
-    
+    AppComponent,        
   ],
   imports: [
     BrowserModule,
@@ -24,11 +22,16 @@ import { GenresComponent } from './components/genres/genres.component';
     BrowserAnimationsModule,
     MaterialModule,
     RouterModule,
-    HttpClientModule,
-    
+    HttpClientModule,    
+    SharedModule,
+    MoviesModule
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

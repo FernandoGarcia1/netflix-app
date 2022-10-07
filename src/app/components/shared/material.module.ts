@@ -6,19 +6,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
-import {ListMoviesComponent } from './list-movies/list-movies.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { RouterModule } from '@angular/router';
+
+
+
 
 
 
 @NgModule({
-  declarations: [
-    ListMoviesComponent,    
-    DialogComponent, SidenavComponent
+  declarations: [    
   ],
   imports: [
     CommonModule,
@@ -30,7 +27,7 @@ import { RouterModule } from '@angular/router';
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
-    RouterModule
+    
   ],
   exports: [
     MatToolbarModule,
@@ -38,11 +35,10 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule,
-    ListMoviesComponent,
+    MatCardModule,    
     MatGridListModule,
     MatDialogModule,    
-    SidenavComponent
+    
   ]
 })
 export class MaterialModule { }

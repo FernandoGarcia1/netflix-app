@@ -1,5 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA   } from '@angular/material/dialog';
+
+
 
 @Component({
   selector: 'app-dialog',
@@ -8,8 +11,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit {
   public movie: any;
-  public selectMovie: boolean  = false;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  public selectFavorite: boolean  = false;
+  public selectShared: boolean  = false;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
     this.movie = this.data;
@@ -22,16 +26,15 @@ export class DialogComponent implements OnInit {
     }
     console.log('Aqui', selection);
     if(selection === 'true'){
-      this.selectMovie = true;
+      this.selectFavorite = true;
       console.log('if-entra')
     }
     
   }
-  favoriteClick() {
-    console.log('click')
-    this.selectMovie = !this.selectMovie;
+  favoriteClick() {    
+    this.selectFavorite = !this.selectFavorite;
 
-    if (this.selectMovie) { //Si ha seleccionado la pelicula
+    if (this.selectFavorite) { //Si ha seleccionado la pelicula
       if (this.movie['original_title'] !== undefined) { //Es una pelicula
         localStorage.setItem(this.movie.original_title, "true");
       } else if (this.movie['original_name'] !== undefined) { // Es una serie
@@ -47,10 +50,13 @@ export class DialogComponent implements OnInit {
 
   }
 
-  isSelected(){
-    console.log('isSelected', this.selectMovie)
-    return this.selectMovie;
+  sharedClick(){
+    this.selectShared = !this.selectShared;    
   }
+  
 
+  closeDialog(){       
+    this.dialogRef.close()
+  }
 
 }

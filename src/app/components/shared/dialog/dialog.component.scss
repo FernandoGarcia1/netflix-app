@@ -55,6 +55,7 @@ h3{
     height: 10%;
     width: 10%;    
     color: white;
+    margin-right: 9vw;
     
 }
 .small-text{    
@@ -73,4 +74,22 @@ h3{
 
 mat-icon:hover{
     cursor: pointer;
+}
+
+.close-position{
+    position: absolute;
+    margin-left: -75vw;
+    margin-top: 12px;
+    
+}
+.container-p{
+    margin-top: -3vh;
+}
+.p-small{
+    display: inline;
+    text-align: left;
+    width: -50%;
+    font-size: 1em;    
+    margin-right: 11vw;
+    
 }
