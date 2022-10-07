@@ -25,7 +25,7 @@ export class PrincipalComponent implements OnInit {
     this.moviesRequest.getNewMovies ().subscribe({
       next:(resp : any) =>{
         this.recentMovies = resp.results;        
-        this.recentMovies = this.recentMovies.slice(0, 5)       
+        //this.recentMovies = this.recentMovies.slice(0, 5)       
       }
     })
   }
@@ -33,7 +33,7 @@ export class PrincipalComponent implements OnInit {
     this.moviesRequest.getPopularSeries().subscribe({
       next:(resp : any) =>{
         this.popularSeries = resp.results;        
-        this.popularSeries = this.popularSeries.slice(0, 5)       
+        //this.popularSeries = this.popularSeries.slice(0, 5)       
       }
     })
   }
@@ -42,7 +42,7 @@ export class PrincipalComponent implements OnInit {
     this.moviesRequest.getPopularMovies().subscribe({
       next:(resp : any) =>{
         this.popularMovies = resp.results;        
-        this.popularMovies = this.popularMovies.slice(0, 5)       
+        //this.popularMovies = this.popularMovies.slice(0, 5)       
       }
     })
   }

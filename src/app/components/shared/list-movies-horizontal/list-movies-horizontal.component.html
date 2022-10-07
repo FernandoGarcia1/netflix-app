@@ -1,0 +1,8 @@
+<div class="scrolling-wrapper">
+    <ng-container *ngFor="let movie of movies; let i = index">
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"
+                style="width: 80%; height:250px; margin-bottom: 50px;" (click)="openDialog(i)">
+            </div>
+    </ng-container>
+</div>
