@@ -13,7 +13,7 @@
         <ng-container *ngFor="let movie of movies; let i = index">
             <mat-grid-tile>
                 <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"
-                    style="height:250px; margin-bottom: 50px; width: 80vw;" (click)="openDialog(i)">
+                    style="height:250px; margin-bottom: 50px;" (click)="openDialog(i)">
             </mat-grid-tile>
         </ng-container>
     </mat-grid-list>

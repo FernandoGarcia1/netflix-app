@@ -32,22 +32,29 @@ export class ListMoviesComponent implements OnInit {
   }
   public mediaQuery() {
 
-
+    this.breakpointObserver
+    .observe(Breakpoints.XSmall)
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        //AQUI SERA TRUE SOLO SI ESTA EN RESOLUCION DE CELULAR
+        this.numberColumns = 2;
+      }
+    });
       this.breakpointObserver
       .observe(Breakpoints.Small)
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           //AQUI SERA TRUE SOLO SI ESTA EN RESOLUCION DE CELULAR
-          this.numberColumns = 2;
+          this.numberColumns = 4;
         }
       });
 
     this.breakpointObserver
-      .observe(Breakpoints.Tablet)
+      .observe(Breakpoints.Medium)
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           //AQUI SERA TRUE SOLO SI ESTA EN RESOLUCION DE Tablet
-          this.numberColumns = 4;
+          this.numberColumns = 6;
         }
       });
 
@@ -56,7 +63,7 @@ export class ListMoviesComponent implements OnInit {
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           //AQUI SERA TRUE SOLO SI ES RESOLUCION PARA WEB
-          this.numberColumns = 5;
+          this.numberColumns = 8;
         }
       });
   }

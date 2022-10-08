@@ -7,7 +7,7 @@ import {
   HttpParams
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Constants } from 'src/app/components/utils/constants.class';
+import { Constants } from 'src/app/utils/constants.class';
 
 
 @Injectable()

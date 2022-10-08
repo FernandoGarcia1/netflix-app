@@ -58,5 +58,4 @@ export class GenresComponent implements OnInit {
     }
   }
 
-
 }
